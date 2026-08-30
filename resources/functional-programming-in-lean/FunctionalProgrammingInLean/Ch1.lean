@@ -54,3 +54,44 @@ def volume (height : Nat) (width : Nat) (depth : Nat) : Nat :=
     height * width * depth
 
 end Ex3
+
+
+
+section Ex4
+
+/- Define a structure named RectangularPrism that contains
+   the height, width, and depth of a rectangular prism, each as a
+   Float. -/
+
+structure RectangularPrism where
+   height : Float
+   width : Float
+   depth : Float
+
+/- Define a function named volume : RectangularPrism →
+   Float that computes the volume of a rectangular prism. -/
+
+def RectangularPrism.volume (r : RectangularPrism) : Float :=
+   r.height * r.width * r.depth
+
+/- Define a structure named Segment that represents a line
+   segment by its endpoints, and define a function length :
+   Segment → Float that computes the length of a line
+   segment. Segment should have at most two fields. -/
+
+structure Point where
+   x : Float
+   y : Float
+
+structure Segment where
+   beginning : Point
+   ending : Point
+
+def Segment.length (s : Segment) : Float :=
+   Float.sqrt (
+      ((s.beginning.x - s.ending.x) ^ 2.)
+      +
+      ((s.beginning.y - s.ending.y) ^ 2.)
+   )
+
+end Ex4
