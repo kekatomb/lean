@@ -25,3 +25,32 @@ section Ex1
 #eval if 3 == 4 then "equal" else "not equal"
 
 end Ex1
+
+
+
+section Ex3
+
+/- Define the function joinStringsWith with type String →
+   String → String → String that creates a new string by
+   placing its first argument between its second and third
+   arguments. joinStringsWith ", " "one" "and
+   another" should evaluate to "one, and another". -/
+
+def joinStringsWith (separator : String) (before : String) (after : String) : String :=
+    String.join [before, separator, after]
+#eval joinStringsWith ", " "one" "and another"
+
+/- What is the type of joinStringsWith ": "? Check your
+   answer with Lean. -/
+
+-- #check (joinStringsWith ": ")
+-- ==> joinStringWith ": " : String -> String -> String
+#check (joinStringsWith ": ")
+
+/- Define a function volume with type Nat → Nat → Nat →
+   Nat that computes the volume of a rectangular prism with the
+   given height, width, and depth. -/
+def volume (height : Nat) (width : Nat) (depth : Nat) : Nat :=
+    height * width * depth
+
+end Ex3
